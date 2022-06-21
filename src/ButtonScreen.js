@@ -5,10 +5,10 @@ import { Outlet, Link } from "react-router-dom";
 const socket = io.connect("http://localhost:3001");
 
 function ButtonScreen() {
-    //Room State
+
     const room = "4";
 
-    // Messages State
+
     const [message, setMessage] = useState("");
     const [messageReceived, setMessageReceived] = useState("");
 
@@ -68,6 +68,7 @@ function ButtonScreen() {
                     setMessage(event.target.value);
                 }}
             /> */}
+
             <button onClick={() => { onClick1(); sendMessage(); }}> Button1</button>
             <button onClick={() => { onClick2(); sendMessage(); }}> Button2</button>
             <button onClick={() => { onClick3(); sendMessage(); }}> Button3</button>

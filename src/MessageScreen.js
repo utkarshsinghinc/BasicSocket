@@ -5,11 +5,11 @@ import { Outlet, Link } from "react-router-dom";
 const socket = io.connect("http://localhost:3001");
 
 function MessageScreen() {
-    //Room State
+
     const room = "4";
 
-    // Messages State
-    const [message, setMessage] = useState("");
+
+    // const [message, setMessage] = useState("");
     const [messageReceived, setMessageReceived] = useState("");
 
     const joinRoom = () => {
@@ -18,9 +18,6 @@ function MessageScreen() {
         }
     };
 
-    // const sendMessage = () => {
-    //     socket.emit("send_message", { message, room });
-    // };
 
     useEffect(() => {
         socket.on("receive_message", (data) => {
@@ -32,32 +29,14 @@ function MessageScreen() {
     }, [socket]);
 
 
-    // const onClick1 = () => {
-    //     setMessage("Button 1 is clicked");
 
-    // }
-
-    // const onClick2 = () => {
-    //     setMessage("Button 2 is clicked");
-
-    // }
-
-    // const onClick3 = () => {
-    //     setMessage("Button 3 is clicked");
-
-    // }
-
-    // const onClick4 = () => {
-    //     setMessage("Button 4 is clicked");
-
-    // }
 
 
 
     return (
         <div className="App">
             {/* <input
-                placeholder="Room Number..."
+                placeholder="Room Number"
                 onChange={(event) => {
                     setRoom(event.target.value);
                 }}
@@ -69,14 +48,11 @@ function MessageScreen() {
                     setMessage(event.target.value);
                 }}
             /> */}
-            {/* <button onClick={() => { onClick1(); sendMessage(); }}> Button1</button>
-            <button onClick={() => { onClick2(); sendMessage(); }}> Button2</button>
-            <button onClick={() => { onClick3(); sendMessage(); }}> Button3</button>
-            <button onClick={() => { onClick4(); sendMessage(); }}> Button4</button> */}
+
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Buttons</Link>
+                        <Link to="/" target="_blank" >Buttons</Link>
                     </li>
 
                 </ul>
